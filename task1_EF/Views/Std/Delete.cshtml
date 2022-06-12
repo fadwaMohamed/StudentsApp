@@ -1,0 +1,36 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="card mt-5">
+      <div class="card-header bg-info text-white">
+        Delete
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Do you want to delete this Student?</h5>
+        <p class="card-text">Id: @Model.Id</p>
+        <p class="card-text">Name: @Model.Name</p>
+        <p class="card-text">Age: @Model.Age</p>
+        <p class="card-text">Department name: @Model.Department.Name</p>
+        <p class="card-text">Email: @Model.Email</p>
+        <p class="card-text">Password: @Model.Password</p>
+        <p class="card-text">UserName: @Model.UserName</p>
+        <form method="POST">
+            <input asp-for="Id" hidden />
+            <a asp-action="Index" asp-controller="Std" class="btn btn-outline-info m-3">Cancel</a>
+            <input type="submit" value="Delete" class="btn btn-outline-info m-3" />
+        </form>
+      </div>
+    </div>
+</body>
+</html>

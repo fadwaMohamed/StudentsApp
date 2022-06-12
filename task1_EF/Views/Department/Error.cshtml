@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-danger my-5 mx-3" role="alert">
+                Repeated ID
+            </div>
+        </div>
+        <div class="row">
+            <a asp-action="Create" asp-controller="Department" class="btn btn-outline-info m-3">Add Department</a>
+            <a asp-action="Index" asp-controller="Department" class="btn btn-outline-info m-3">Show Departments</a>
+        </div>
+    </div>
+</body>
+</html>

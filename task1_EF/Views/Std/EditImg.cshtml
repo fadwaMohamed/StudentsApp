@@ -1,0 +1,35 @@
+﻿@model ImageViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditImg</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h5 class="border-bottom w-50 border-info py-2 mx-auto text-center">Add student</h5>
+    <form method="POST" enctype="multipart/form-data"> 
+        <input asp-for="Id" hidden />
+        <div class="container mt-3">
+            <div class="row text-center">
+                <div class="m-3 text-center row">
+                    <label asp-for="StdImg" class="col-5 fw-bold">Image</label>
+                    <input type="file" name="StdImg" class="col-7 col-md-4" />
+                    <span asp-validation-for=StdImg class="mt-1"></span>
+                </div>
+                <input type="submit" value="Change Image" class="col-2 offset-5 btn btn-outline-info my-4 col-md-2" />
+            </div>
+        </div>
+    </form>
+ 
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

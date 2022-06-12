@@ -1,0 +1,45 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="card m-5">
+      <div class="card-header bg-info text-white">
+        Student Details
+      </div>
+      <div class="card-body">
+          <div class="container">
+              <div class="row">
+                <div class="col-5 text-center row flex-column justify-content-evenly align-items-center">
+                    <img src="~/images/@Model.StdImg" class="p-0" style="width:80px; height:80px; border-radius:50%"/>
+                    <a asp-action="EditImg" asp-controller="Std" asp-route-id=@Model.Id class="col-10 col-md-5 btn btn-outline-info m-2">Change photo</a>
+                    <a asp-action="EditPassword" asp-controller="Std" asp-route-id=@Model.Id class="col-10 col-md-5 btn btn-outline-info m-2">Change password</a>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-6">
+                    <p class="card-text">Id: @Model.Id</p>
+                    <p class="card-text">Name: @Model.Name</p>
+                    <p class="card-text">Age: @Model.Age</p>
+                    <p class="card-text">Department name: @Model.Department.Name</p>
+                    <p class="card-text">Email: @Model.Email</p>
+                    <p class="card-text">Password: @Model.Password</p>
+                    <p class="card-text">UserName: @Model.UserName</p>
+                </div>
+              </div>
+           </div>
+     </div>
+    <div class="card-footer row">
+        <a asp-action="Index" asp-controller="Std" class="btn btn-outline-info m-auto btn-sm col-2 offset-5">Home</a>
+    </div>
+    </div>
+</body>
+</html>
